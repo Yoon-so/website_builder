@@ -1,0 +1,38 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+}
+
+header{
+    text-align: center;
+    padding: 80px;
+    background: #f5f7ff;
+}
+
+.features{
+    display: flex;
+    gap: 30px;
+    padding: 40px;
+}
+
+.feature{
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.temlates{
+    display: flex;
+    gap: 20px;
+}
+
+.template{
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.call-to-action{
+    text-align: center;
+    padding: 40px;
+}
