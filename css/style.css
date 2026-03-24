@@ -36,3 +36,72 @@ header{
     text-align: center;
     padding: 40px;
 }
+
+/* Footer */
+.footer-separator {
+    border: 0;
+    border-top: 1px solid #e7e7e7;
+    margin: 0;
+    width: 100%;
+}
+.footer {
+    background-color: white;
+    padding: 25px;
+    color: #5a5a5a;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.footer-text {
+    max-width: 800px;
+    margin: 0 auto 30px auto;
+    line-height: 1.6; /*읽기 쉽게 할 수 있도록 */
+    font-size: 16px;
+}
+.footer-columns {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 100px;
+    text-align: left;
+}
+.footer-info {
+    min-width: 150px;
+}
+@media (max-width: 768px) {
+    .footer-columns {
+        justify-content: flex-start;
+    }
+}
+.footer-title {
+    color:black;
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+.footer-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.footer-list li {
+    margin-bottom: 8px;
+}
+.footer-list a {
+    display: block;
+    font-size: 15px;
+    text-decoration: none;
+    color: #5a5a5a;
+    transition: 0.2s;
+}
+.footer-list a:hover {
+    color: #847df9;
+}
+.footer-logo {
+    text-align: center;
+    margin-top: 30px;
+    font-size: 14px;
+}
+.footer hr {
+    border: 0;
+    border-top: 1px solid #e7e7e7;
+    margin: 20px 0 10px 0;
+}
