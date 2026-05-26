@@ -1,17 +1,518 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Template 템플릿</title>
+    <title>웹페이지 템플릿</title>
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
-<body>
-    <header class="bg-gray-800 text-white p-4">
-        <h1 class="text-3xl font-bold">템플릿</h1>
-    </header>
+<body class="font-sans m-0">
+    <!-- Fixed Navigation Bar -->
+    <nav class="fixed top-0 left-0 right-0 bg-white shadow-md z-40">
+        <div class="flex justify-between items-center px-20 py-4">
+            <!-- Left: Web Builder Button -->
+            <a href="index.html" class="flex items-center gap-2 hover:cursor-pointer group">
+                <!-- Icon -->
+                <span class="text-white text-sm w-8 h-8 bg-gradient-to-br from-indigo-500 to-purple-500 rounded-lg flex items-center justify-center transition-transform duration-200 group-hover:scale-110">W</span>
 
-    
+                <!-- Text -->
+                <span class="text-xl font-semibold bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">Web Builder</span>
+            </a>
+
+            <!-- Right: Navigation Buttons -->
+            <div class="flex gap-6 items-center">
+                <!-- 템플릿 Button -->
+                <a href="templates.html" data-nav-link="templates.html" class="text-slate-600 font-normal hover:text-slate-800 transition-colors duration-200 hover:cursor-pointer">
+                    템플릿
+                </a>
+
+                <!-- 웹 페이지 만들기 Button -->
+                <a href="builder.html" data-nav-link="builder.html" class="text-slate-600 font-normal hover:text-slate-800 transition-colors duration-200 hover:cursor-pointer">
+                    웹사이트 만들기
+                </a>
+
+                <!-- 요금제 Button -->
+                <a href="pricing.html" data-nav-link="pricing.html" class="text-slate-600 font-normal hover:text-slate-800 transition-colors duration-200 hover:cursor-pointer">
+                    요금제
+                </a>
+
+                <!-- 로그인 Button with Icon -->
+                <a href="login.html" class="flex items-center gap-2 px-4 py-2 text-sm font-medium text-slate-600 hover:text-slate-900 transition-colors border border-slate-200 rounded-lg hover:border-slate-300 hover:cursor-pointer">
+                    <!-- Login Icon -->
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4">
+                        <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path>
+                        <circle cx="12" cy="7" r="4"></circle>
+                    </svg>
+                    <span>로그인</span>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main -->
+    <main class="bg-slate-50 min-h-screen pt-20">
+        <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 pb-24">
+            <div class="mb-12">
+                <h1 class="text-4xl font-bold text-slate-900 mb-4">웹페이지 템플릿</h1>
+                <p class="text-lg text-slate-600">전문적으로 디자인된 웹사이트 템플릿 컬렉션을 둘러보세요. 원하는 템플릿을 선택해 바로 시작하거나, 당신의 비전에 맞게 자유롭게 커스터마이징할 수 있습니다.</p>
+            </div>
+
+            <!-- Category buttons -->
+            <div class="flex flex-wrap gap-3 mb-8">
+                <!-- All templates -->
+                <button type="button" data-category-filter="all" class="flex items-center gap-2 px-5 py-2.5 rounded-xl font-medium transition-all bg-indigo-600 text-white shadow-lg shadow-indigo-200">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-layers w-4 h-4">
+                        <path d="M12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83z"></path>
+                        <path d="M2 12a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 12"></path>
+                        <path d="M2 17a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 17"></path>
+                    </svg>
+                    모든 템플릿
+                </button>
+                <!-- Online Store -->
+                <button type="button" data-category-filter="온라인 쇼핑몰" class="flex items-center gap-2 px-5 py-2.5 rounded-xl font-medium transition-all bg-white text-slate-700 border border-slate-200 hover:border-indigo-300 hover:shadow-md">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-store w-4 h-4">
+                        <path d="m2 7 4.41-4.41A2 2 0 0 1 7.83 2h8.34a2 2 0 0 1 1.42.59L22 7"></path>
+                        <path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path>
+                        <path d="M15 22v-4a2 2 0 0 0-2-2h-2a2 2 0 0 0-2 2v4"></path>
+                        <path d="M2 7h20"></path>
+                        <path d="M22 7v3a2 2 0 0 1-2 2a2.7 2.7 0 0 1-1.59-.63.7.7 0 0 0-.82 0A2.7 2.7 0 0 1 16 12a2.7 2.7 0 0 1-1.59-.63.7.7 0 0 0-.82 0A2.7 2.7 0 0 1 12 12a2.7 2.7 0 0 1-1.59-.63.7.7 0 0 0-.82 0A2.7 2.7 0 0 1 8 12a2.7 2.7 0 0 1-1.59-.63.7.7 0 0 0-.82 0A2.7 2.7 0 0 1 4 12a2 2 0 0 1-2-2V7"></path>
+                    </svg>
+                    온라인 쇼핑몰
+                </button>
+                <!-- Portfolio -->
+                <button type="button" data-category-filter="포트폴리오" class="flex items-center gap-2 px-5 py-2.5 rounded-xl font-medium transition-all bg-white text-slate-700 border border-slate-200 hover:border-indigo-300 hover:shadow-md">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-user w-4 h-4">
+                        <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path>
+                        <circle cx="12" cy="7" r="4"></circle>
+                    </svg>
+                    포트폴리오
+                </button>
+                <!-- Blog -->
+                <button type="button" data-category-filter="블로그" class="flex items-center gap-2 px-5 py-2.5 rounded-xl font-medium transition-all bg-white text-slate-700 border border-slate-200 hover:border-indigo-300 hover:shadow-md">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-file-text w-4 h-4">
+                        <path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"></path>
+                        <path d="M14 2v4a2 2 0 0 0 2 2h4"></path>
+                        <path d="M10 9H8"></path>
+                        <path d="M16 13H8"></path>
+                        <path d="M16 17H8"></path>
+                    </svg>
+                    블로그
+                </button>
+                <!-- Streaming -->
+                <button type="button" data-category-filter="스트리밍" class="flex items-center gap-2 px-5 py-2.5 rounded-xl font-medium transition-all bg-white text-slate-700 border border-slate-200 hover:border-indigo-300 hover:shadow-md">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-tv w-4 h-4">
+                        <rect width="20" height="15" x="2" y="7" rx="2" ry="2"></rect>
+                        <polyline points="17 2 12 7 7 2"></polyline>
+                    </svg>
+                    스트리밍
+                </button>
+                <!-- Business -->
+                <button type="button" data-category-filter="비즈니스" class="flex items-center gap-2 px-5 py-2.5 rounded-xl font-medium transition-all bg-white text-slate-700 border border-slate-200 hover:border-indigo-300 hover:shadow-md">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-briefcase w-4 h-4">
+                        <path d="M16 20V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+                        <rect width="20" height="14" x="2" y="6" rx="2"></rect>
+                    </svg>
+                    비즈니스
+                </button>
+            </div>
+            <!-- Number of templates on the screen -->
+            <p data-template-count class="text-sm text-slate-500 mb-6">
+                총 <span data-template-count-number class="font-semibold text-slate-900">8</span>개의 템플릿이 있습니다.
+            </p>
+
+            <!-- Templates Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Modern Online Store -->
+                <div data-template-category="온라인 쇼핑몰" class="group bg-white rounded-2xl overflow-hidden shadow-sm border border-slate-200 hover:shadow-xl transition-all hover:-translate-y-1">
+                    <div class="aspect-[4/3] overflow-hidden bg-slate-100 relative">
+                        <img src="https://images.unsplash.com/photo-1768987439365-ffc51bf0f467" alt="모던 스토어 템플릿" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                        <span style="position: absolute; top: 1rem; left: 1rem;" class="inline-block px-3 py-1 bg-white/90 backdrop-blur-sm text-xs font-medium text-slate-700 rounded-full">
+                            온라인 쇼핑몰
+                        </span>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-slate-900 mb-2">
+                            모던 스토어
+                        </h3>
+                        <p class="text-sm text-slate-600 mb-6 leading-relaxed">
+                            상품을 깔끔하게 보여주고 구매 흐름까지 자연스럽게 이어지는 온라인 쇼핑몰 템플릿입니다.
+                        </p>
+                        <div class="flex gap-3">
+                            <a href="preview.html" class="flex-1 flex items-center justify-center gap-2 px-4 py-2.5 bg-slate-100 text-slate-700 font-medium rounded-lg hover:bg-slate-200 transition-colors">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-eye w-4 h-4">
+                                    <path d="M2.062 12.348a1 1 0 0 1 0-.696 10.75 10.75 0 0 1 19.876 0 1 1 0 0 1 0 .696 10.75 10.75 0 0 1-19.876 0"></path>
+                                    <circle cx="12" cy="12" r="3"></circle>
+                                </svg>
+                                미리보기
+                            </a>
+                            <a href="builder.html" class="flex-1 flex items-center justify-center gap-2 px-4 py-2.5 bg-gradient-to-r from-indigo-600 to-purple-600 text-white font-medium rounded-lg hover:shadow-lg transition-all">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-circle-check w-4 h-4">
+                                    <circle cx="12" cy="12" r="10"></circle>
+                                    <path d="m9 12 2 2 4-4"></path>
+                                </svg>
+                                템플릿 사용
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Creative Portfolio -->
+                <div data-template-category="포트폴리오" class="group bg-white rounded-2xl overflow-hidden shadow-sm border border-slate-200 hover:shadow-xl transition-all hover:-translate-y-1">
+                    <div class="aspect-[4/3] overflow-hidden bg-slate-100 relative">
+                        <img src="https://images.unsplash.com/photo-1760071744047-5542cbfda184" alt="크리에이티브 포트폴리오 템플릿" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                        <span style="position: absolute; top: 1rem; left: 1rem;" class="inline-block px-3 py-1 bg-white/90 backdrop-blur-sm text-xs font-medium text-slate-700 rounded-full">
+                            포트폴리오
+                        </span>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-slate-900 mb-2">
+                            크리에이티브 포트폴리오
+                        </h3>
+                        <p class="text-sm text-slate-600 mb-6 leading-relaxed">
+                            대표 작업과 역량, 나만의 감각을 세련되게 보여줄 수 있는 포트폴리오 템플릿입니다.
+                        </p>
+                        <div class="flex gap-3">
+                            <a href="preview.html" class="flex-1 flex items-center justify-center gap-2 px-4 py-2.5 bg-slate-100 text-slate-700 font-medium rounded-lg hover:bg-slate-200 transition-colors">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-eye w-4 h-4">
+                                    <path d="M2.062 12.348a1 1 0 0 1 0-.696 10.75 10.75 0 0 1 19.876 0 1 1 0 0 1 0 .696 10.75 10.75 0 0 1-19.876 0"></path>
+                                    <circle cx="12" cy="12" r="3"></circle>
+                                </svg>
+                                미리보기
+                            </a>
+                            <a href="builder.html" class="flex-1 flex items-center justify-center gap-2 px-4 py-2.5 bg-gradient-to-r from-indigo-600 to-purple-600 text-white font-medium rounded-lg hover:shadow-lg transition-all">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-circle-check w-4 h-4">
+                                    <circle cx="12" cy="12" r="10"></circle>
+                                    <path d="m9 12 2 2 4-4"></path>
+                                </svg>
+                                템플릿 사용
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Lifestyle Blog -->
+                <div data-template-category="블로그" class="group bg-white rounded-2xl overflow-hidden shadow-sm border border-slate-200 hover:shadow-xl transition-all hover:-translate-y-1">
+                    <div class="aspect-[4/3] overflow-hidden bg-slate-100 relative">
+                        <img src="https://images.unsplash.com/photo-1565672282630-ff265756849c" alt="라이프스타일 블로그 템플릿" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                        <span style="position: absolute; top: 1rem; left: 1rem;" class="inline-block px-3 py-1 bg-white/90 backdrop-blur-sm text-xs font-medium text-slate-700 rounded-full">
+                            블로그
+                        </span>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-slate-900 mb-2">
+                            라이프스타일 블로그
+                        </h3>
+                        <p class="text-sm text-slate-600 mb-6 leading-relaxed">
+                            일상 이야기, 에세이, 가이드 글을 편안하게 읽히도록 구성한 블로그 템플릿입니다.
+                        </p>
+                        <div class="flex gap-3">
+                            <a href="preview.html" class="flex-1 flex items-center justify-center gap-2 px-4 py-2.5 bg-slate-100 text-slate-700 font-medium rounded-lg hover:bg-slate-200 transition-colors">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-eye w-4 h-4">
+                                    <path d="M2.062 12.348a1 1 0 0 1 0-.696 10.75 10.75 0 0 1 19.876 0 1 1 0 0 1 0 .696 10.75 10.75 0 0 1-19.876 0"></path>
+                                    <circle cx="12" cy="12" r="3"></circle>
+                                </svg>
+                                미리보기
+                            </a>
+                            <a href="builder.html" class="flex-1 flex items-center justify-center gap-2 px-4 py-2.5 bg-gradient-to-r from-indigo-600 to-purple-600 text-white font-medium rounded-lg hover:shadow-lg transition-all">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-circle-check w-4 h-4">
+                                    <circle cx="12" cy="12" r="10"></circle>
+                                    <path d="m9 12 2 2 4-4"></path>
+                                </svg>
+                                템플릿 사용
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Video Streaming -->
+                <div data-template-category="스트리밍" class="group bg-white rounded-2xl overflow-hidden shadow-sm border border-slate-200 hover:shadow-xl transition-all hover:-translate-y-1">
+                    <div class="aspect-[4/3] overflow-hidden bg-slate-100 relative">
+                        <img src="https://images.unsplash.com/photo-1762340274205-06b6e0147640" alt="비디오 스트리밍 템플릿" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                        <span style="position: absolute; top: 1rem; left: 1rem;" class="inline-block px-3 py-1 bg-white/90 backdrop-blur-sm text-xs font-medium text-slate-700 rounded-full">
+                            스트리밍
+                        </span>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-slate-900 mb-2">
+                            비디오 스트리밍
+                        </h3>
+                        <p class="text-sm text-slate-600 mb-6 leading-relaxed">
+                            영상 콘텐츠, 추천 작품, 플레이리스트를 한눈에 탐색할 수 있는 스트리밍 템플릿입니다.
+                        </p>
+                        <div class="flex gap-3">
+                            <a href="preview.html" class="flex-1 flex items-center justify-center gap-2 px-4 py-2.5 bg-slate-100 text-slate-700 font-medium rounded-lg hover:bg-slate-200 transition-colors">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-eye w-4 h-4">
+                                    <path d="M2.062 12.348a1 1 0 0 1 0-.696 10.75 10.75 0 0 1 19.876 0 1 1 0 0 1 0 .696 10.75 10.75 0 0 1-19.876 0"></path>
+                                    <circle cx="12" cy="12" r="3"></circle>
+                                </svg>
+                                미리보기
+                            </a>
+                            <a href="builder.html" class="flex-1 flex items-center justify-center gap-2 px-4 py-2.5 bg-gradient-to-r from-indigo-600 to-purple-600 text-white font-medium rounded-lg hover:shadow-lg transition-all">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-circle-check w-4 h-4">
+                                    <circle cx="12" cy="12" r="10"></circle>
+                                    <path d="m9 12 2 2 4-4"></path>
+                                </svg>
+                                템플릿 사용
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pro Business Website -->
+                <div data-template-category="비즈니스" class="group bg-white rounded-2xl overflow-hidden shadow-sm border border-slate-200 hover:shadow-xl transition-all hover:-translate-y-1">
+                    <div class="aspect-[4/3] overflow-hidden bg-slate-100 relative">
+                        <img src="https://images.unsplash.com/photo-1762341117487-dbc411bcf574?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwcm9mZXNzaW9uYWwlMjBidXNpbmVzcyUyMG9mZmljZXxlbnwxfHx8fDE3NzMzNDk0NDJ8MA&ixlib=rb-4.1.0&q=80&w=1080" alt="비즈니스 프로 템플릿" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                        <span style="position: absolute; top: 1rem; left: 1rem;" class="inline-block px-3 py-1 bg-white/90 backdrop-blur-sm text-xs font-medium text-slate-700 rounded-full">
+                            비즈니스
+                        </span>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-slate-900 mb-2">
+                            프로 비즈니스
+                        </h3>
+                        <p class="text-sm text-slate-600 mb-6 leading-relaxed">
+                            서비스 소개, 팀 정보, 고객 사례, 문의 흐름을 전문적으로 담아내는 비즈니스 템플릿입니다.
+                        </p>
+                        <div class="flex gap-3">
+                            <a href="preview.html" class="flex-1 flex items-center justify-center gap-2 px-4 py-2.5 bg-slate-100 text-slate-700 font-medium rounded-lg hover:bg-slate-200 transition-colors">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-eye w-4 h-4">
+                                    <path d="M2.062 12.348a1 1 0 0 1 0-.696 10.75 10.75 0 0 1 19.876 0 1 1 0 0 1 0 .696 10.75 10.75 0 0 1-19.876 0"></path>
+                                    <circle cx="12" cy="12" r="3"></circle>
+                                </svg>
+                                미리보기
+                            </a>
+                            <a href="builder.html" class="flex-1 flex items-center justify-center gap-2 px-4 py-2.5 bg-gradient-to-r from-indigo-600 to-purple-600 text-white font-medium rounded-lg hover:shadow-lg transition-all">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-circle-check w-4 h-4">
+                                    <circle cx="12" cy="12" r="10"></circle>
+                                    <path d="m9 12 2 2 4-4"></path>
+                                </svg>
+                                템플릿 사용
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Online Fashion Store -->
+                <div data-template-category="온라인 쇼핑몰" class="group bg-white rounded-2xl overflow-hidden shadow-sm border border-slate-200 hover:shadow-xl transition-all hover:-translate-y-1">
+                    <div class="aspect-[4/3] overflow-hidden bg-slate-100 relative">
+                        <img src="https://images.unsplash.com/photo-1768987439365-ffc51bf0f467" alt="패션 스토어 템플릿" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                        <span style="position: absolute; top: 1rem; left: 1rem;" class="inline-block px-3 py-1 bg-white/90 backdrop-blur-sm text-xs font-medium text-slate-700 rounded-full">
+                            온라인 쇼핑몰
+                        </span>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-slate-900 mb-2">
+                            패션 스토어
+                        </h3>
+                        <p class="text-sm text-slate-600 mb-6 leading-relaxed">
+                            컬렉션, 룩북, 신상품, 시즌 기획전을 감각적으로 보여주는 패션 쇼핑몰 템플릿입니다.
+                        </p>
+                        <div class="flex gap-3">
+                            <a href="preview.html" class="flex-1 flex items-center justify-center gap-2 px-4 py-2.5 bg-slate-100 text-slate-700 font-medium rounded-lg hover:bg-slate-200 transition-colors">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-eye w-4 h-4">
+                                    <path d="M2.062 12.348a1 1 0 0 1 0-.696 10.75 10.75 0 0 1 19.876 0 1 1 0 0 1 0 .696 10.75 10.75 0 0 1-19.876 0"></path>
+                                    <circle cx="12" cy="12" r="3"></circle>
+                                </svg>
+                                미리보기
+                            </a>
+                            <a href="builder.html" class="flex-1 flex items-center justify-center gap-2 px-4 py-2.5 bg-gradient-to-r from-indigo-600 to-purple-600 text-white font-medium rounded-lg hover:shadow-lg transition-all">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-circle-check w-4 h-4">
+                                    <circle cx="12" cy="12" r="10"></circle>
+                                    <path d="m9 12 2 2 4-4"></path>
+                                </svg>
+                                템플릿 사용
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Designer Portfolio -->
+                <div data-template-category="포트폴리오" class="group bg-white rounded-2xl overflow-hidden shadow-sm border border-slate-200 hover:shadow-xl transition-all hover:-translate-y-1">
+                    <div class="aspect-[4/3] overflow-hidden bg-slate-100 relative">
+                        <img src="https://images.unsplash.com/photo-1618761714954-0b8cd0026356?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx3ZWIlMjBkZXNpZ24lMjBpbnRlcmZhY2V8ZW58MXx8fHwxNzczMzQ0MTcxfDA&ixlib=rb-4.1.0&q=80&w=1080" alt="디자이너 포트폴리오 템플릿" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                        <span style="position: absolute; top: 1rem; left: 1rem;" class="inline-block px-3 py-1 bg-white/90 backdrop-blur-sm text-xs font-medium text-slate-700 rounded-full">
+                            포트폴리오
+                        </span>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-slate-900 mb-2">
+                            디자이너 포트폴리오
+                        </h3>
+                        <p class="text-sm text-slate-600 mb-6 leading-relaxed">
+                            비주얼 작업, 프로젝트 사례, 디자인 과정을 정돈된 흐름으로 소개하는 포트폴리오 템플릿입니다.
+                        </p>
+                        <div class="flex gap-3">
+                            <a href="preview.html" class="flex-1 flex items-center justify-center gap-2 px-4 py-2.5 bg-slate-100 text-slate-700 font-medium rounded-lg hover:bg-slate-200 transition-colors">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-eye w-4 h-4">
+                                    <path d="M2.062 12.348a1 1 0 0 1 0-.696 10.75 10.75 0 0 1 19.876 0 1 1 0 0 1 0 .696 10.75 10.75 0 0 1-19.876 0"></path>
+                                    <circle cx="12" cy="12" r="3"></circle>
+                                </svg>
+                                미리보기
+                            </a>
+                            <a href="builder.html" class="flex-1 flex items-center justify-center gap-2 px-4 py-2.5 bg-gradient-to-r from-indigo-600 to-purple-600 text-white font-medium rounded-lg hover:shadow-lg transition-all">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-circle-check w-4 h-4">
+                                    <circle cx="12" cy="12" r="10"></circle>
+                                    <path d="m9 12 2 2 4-4"></path>
+                                </svg>
+                                템플릿 사용
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tech Blog -->
+                <div data-template-category="블로그" class="group bg-white rounded-2xl overflow-hidden shadow-sm border border-slate-200 hover:shadow-xl transition-all hover:-translate-y-1">
+                    <div class="aspect-[4/3] overflow-hidden bg-slate-100 relative">
+                        <img src="https://images.unsplash.com/photo-1565672282630-ff265756849c" alt="테크 블로그 템플릿" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                        <span style="position: absolute; top: 1rem; left: 1rem;" class="inline-block px-3 py-1 bg-white/90 backdrop-blur-sm text-xs font-medium text-slate-700 rounded-full">
+                            블로그
+                        </span>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-slate-900 mb-2">
+                            테크 블로그
+                        </h3>
+                        <p class="text-sm text-slate-600 mb-6 leading-relaxed">
+                            튜토리얼, 제품 업데이트, 기술 노트, 인사이트 글을 명확하게 전달하는 블로그 템플릿입니다.
+                        </p>
+                        <div class="flex gap-3">
+                            <a href="preview.html" class="flex-1 flex items-center justify-center gap-2 px-4 py-2.5 bg-slate-100 text-slate-700 font-medium rounded-lg hover:bg-slate-200 transition-colors">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-eye w-4 h-4">
+                                    <path d="M2.062 12.348a1 1 0 0 1 0-.696 10.75 10.75 0 0 1 19.876 0 1 1 0 0 1 0 .696 10.75 10.75 0 0 1-19.876 0"></path>
+                                    <circle cx="12" cy="12" r="3"></circle>
+                                </svg>
+                                미리보기
+                            </a>
+                            <a href="builder.html" class="flex-1 flex items-center justify-center gap-2 px-4 py-2.5 bg-gradient-to-r from-indigo-600 to-purple-600 text-white font-medium rounded-lg hover:shadow-lg transition-all">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-circle-check w-4 h-4">
+                                    <circle cx="12" cy="12" r="10"></circle>
+                                    <path d="m9 12 2 2 4-4"></path>
+                                </svg>
+                                템플릿 사용
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-white border-t border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-6 py-8">
+
+            <!-- Columns -->
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+
+                <!-- Discription -->
+                <section>
+                    <div class="flex items-center gap-2 mb-4">
+                        <span class="text-white w-8 h-8 bg-gradient-to-br from-indigo-500 to-purple-500 rounded-lg flex items-center justify-center">W</span>
+                        <span class="font-semibold bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">
+                            Website Builder
+                        </span>
+                    </div>
+                    <p class="text-sm text-slate-600">
+                        직관적인 플랫폼으로 단 몇 분 만에 아름다운 웹사이트를 제작하세요!
+                    </p>
+                </section>
+
+                <!-- Product section -->
+                <section>
+                    <h3 class="font-semibold text-slate-900 mb-4">Product</h3>
+                    <ul class="space-y-2 text-sm text-slate-600">
+                        <li><a href="#" class="transition-colors duration-200 hover:text-indigo-600">템플릿</a></li>
+                        <li><a href="#" class="transition-colors duration-200 hover:text-indigo-600">기능</a></li>
+                        <li><a href="#" class="transition-colors duration-200 hover:text-indigo-600">가격</a></li>
+                    </ul>
+                </section>
+
+                <!-- Company section -->
+                <section>
+                    <h3 class="font-semibold text-slate-900 mb-4">Company</h3>
+                    <ul class="space-y-2 text-sm text-slate-600">
+                        <li><a href="#" class="transition-colors duration-200 hover:text-indigo-600">소개</a></li>
+                        <li><a href="#" class="transition-colors duration-200 hover:text-indigo-600">블로그</a></li>
+                        <li><a href="#" class="transition-colors duration-200 hover:text-indigo-600">채용</a></li>
+                    </ul>
+                </section>
+
+                <!-- Support section -->
+                <section>
+                    <h3 class="font-semibold text-slate-900 mb-4">Support</h3>
+                    <ul class="space-y-2 text-sm text-slate-600">
+                        <li><a href="#" class="transition-colors duration-200 hover:text-indigo-600">도움말 센터</a></li>
+                        <li><a href="#" class="transition-colors duration-200 hover:text-indigo-600">연락처</a></li>
+                        <li><a href="#" class="transition-colors duration-200 hover:text-indigo-600">개인정보 처리방침</a></li>
+                    </ul>
+                </section>
+            </div>
+
+            <!-- Footer Copyright -->
+            <div class="border-t border-slate-200 mt-8 pt-8 text-center text-sm text-slate-600">
+                © 2026 Website Builder. All rights reserved.
+            </div>
+        </div>
+    </footer>
+    <script src="js/navbar.js"></script>
+    <script>
+        //Category script
+        const categoryButtons = document.querySelectorAll("[data-category-filter]");
+        const templateCards = document.querySelectorAll("[data-template-category]");
+        const templateCountNumber = document.querySelector("[data-template-count-number]");
+        const activeClasses = ["bg-indigo-600", "text-white", "shadow-lg", "shadow-indigo-200"];
+        const inactiveClasses = ["bg-white", "text-slate-700", "border", "border-slate-200", "hover:border-indigo-300", "hover:shadow-md"];
+
+        function setActiveButton(activeButton) {
+            categoryButtons.forEach((button) => {
+                button.classList.remove(...activeClasses, ...inactiveClasses);
+                button.classList.add(...(button === activeButton ? activeClasses : inactiveClasses));
+            });
+        }
+
+        function updateTemplateCount(count) {
+            templateCountNumber.textContent = count;
+        }
+
+        function filterTemplates(category, activeButton) {
+            let visibleCount = 0;
+            setActiveButton(activeButton);
+
+            templateCards.forEach((card) => {
+                const shouldShow = category === "all" || card.dataset.templateCategory === category;
+
+                if (shouldShow) {
+                    visibleCount += 1;
+                    card.dataset.visible = "true";
+                    card.classList.remove("hidden");
+                    requestAnimationFrame(() => {
+                        card.style.opacity = "1";
+                    });
+                    return;
+                }
+
+                card.dataset.visible = "false";
+                card.style.opacity = "0";
+                setTimeout(() => {
+                    if (card.dataset.visible === "false") {
+                        card.classList.add("hidden");
+                    }
+                }, 180);
+            });
+
+            updateTemplateCount(visibleCount);
+        }
+
+        templateCards.forEach((card) => {
+            card.style.opacity = "1";
+        });
+
+        categoryButtons.forEach((button) => {
+            button.addEventListener("click", () => {
+                filterTemplates(button.dataset.categoryFilter, button);
+            });
+        });
+    </script>
 </body>
 </html>
