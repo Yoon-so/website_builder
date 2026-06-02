@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website Preview</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+   <body class="m-0 bg-slate-100 text-slate-900">
+    <header class="sticky top-0 z-10 border-b border-slate-200 bg-white/95 backdrop-blur">
+        <div class="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-3 sm:px-6">
+            <a href="builder.html" class="font-semibold text-indigo-600">Web Builder</a>
+            <div class="flex items-center gap-2">
+                <button id="refresh-preview" type="button" class="rounded-lg border border-slate-300 px-4 py-2 text-sm font-medium text-slate-700 hover:bg-slate-50">Refresh</button>
+                <a href="builder.html" class="rounded-lg bg-indigo-600 px-4 py-2 text-sm font-medium text-white hover:bg-indigo-700">Back to Builder</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="mx-auto max-w-7xl px-4 py-6 sm:px-6">
+        <div id="empty-state" class="hidden rounded-xl border border-slate-200 bg-white p-8 text-center shadow-sm">
+            <h1 class="mb-2 text-2xl font-bold">No preview saved yet</h1>
+            <p class="mb-5 text-slate-600">Open the builder first, change any field, then come back to this page.</p>
+            <a href="builder.html" class="inline-flex rounded-lg bg-indigo-600 px-5 py-2.5 font-semibold text-white hover:bg-indigo-700">Open Builder</a>
+        </div>
+        <section id="error-screen" class="error-screen is-hidden">
+            <div class="loader-card">
+                <h1>Website generation failed.</h1>
+                <p id="error-detail">Please check your settings and try again.</p>
+                <button id="retry-btn" type="button" class="retry-btn">Retry</button>
+            </div>
+        </section>
+        
+        <iframe id="site-frame" class="site-frame" title="Generated website preview"></iframe>
+    </main>
+    <script>
+        const LAST_PREVIEW_KEY = 'advanced-builder-last-preview-html';
+        const frame = document.getElementById('preview-frame');
+        const emptyState = document.getElementById('empty-state');
+        const previewShell = document.getElementById('preview-shell');
+        const refreshButton = document.getElementById('refresh-preview');
+
+        function loadPreview() {
+            const html = localStorage.getItem(LAST_PREVIEW_KEY);
+
+            if (!html) {
+                emptyState.classList.remove('hidden');
+                previewShell.classList.add('hidden');
+                return;
+            }
+            emptyState.classList.add('hidden');
+            previewShell.classList.remove('hidden');
+            frame.srcdoc = html;
+        }
+        refreshButton.addEventListener('click', loadPreview);
+        loadPreview();
+    </script>
+</body>
+</html>
