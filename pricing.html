@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>요금제 - Web Builder</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body class="font-sans m-0 pt-16 bg-slate-50/50">
+    <!-- Navigation bar -->
+    <nav class="fixed top-0 left-0 right-0 bg-white shadow-md z-40">
+        <div class="flex justify-between items-center px-20 py-4">
+            <a href="index.html" class="flex items-center gap-2 hover:cursor-pointer group">
+                <span class="text-white text-sm w-8 h-8 bg-gradient-to-br from-indigo-500 to-purple-500 rounded-lg flex items-center justify-center transition-transform duration-200 group-hover:scale-110">W</span>
+                <span class="text-xl font-semibold bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">Web Builder</span>
+            </a>
+
+            <div class="flex gap-6 items-center">
+                <a href="templates.html" data-nav-link="templates.html" class="text-slate-600 font-normal hover:text-slate-800 transition-colors duration-200">
+                    템플릿
+                </a>
+                <a href="builder.html" data-nav-link="builder.html" class="text-slate-600 font-normal hover:text-slate-800 transition-colors duration-200">
+                    웹사이트 만들기
+                </a>
+                <a href="pricing.html" data-nav-link="pricing.html" class="text-slate-600 font-normal hover:text-slate-800 transition-colors duration-200">
+                    요금제
+                </a>
+                <a href="login.html" class="flex items-center gap-2 px-4 py-2 text-sm font-medium text-slate-600 hover:text-slate-900 transition-colors border border-slate-200 rounded-lg hover:border-slate-300">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4">
+                        <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path>
+                        <circle cx="12" cy="7" r="4"></circle>
+                    </svg>
+                    <span>로그인</span>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+        
+        <div class="text-center mb-16 mt-8">
+            <h1 class="text-5xl font-bold text-slate-900 mb-4">합리적이고 투명한 요금제</h1>
+            <p class="text-xl text-slate-600 max-w-2xl mx-auto">필요에 맞는 최적의 플랜을 선택하세요. 숨겨진 수수료가 없으며 언제든 해지할 수 있습니다.</p>
+        </div>
+
+        <!-- Pricing Information -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-24 items-start">
+            <!-- Free plan -->
+            <div class="bg-white rounded-2xl shadow-md border border-slate-200 p-8 transition-all hover:shadow-lg">
+                <div class="text-center mb-6">
+                    <h3 class="text-2xl font-bold text-slate-900 mb-2">Free</h3>
+                    <p class="text-slate-600 text-sm mb-4">플랫폼을 가볍게 체험해보고 싶은 분들을 위한 플랜</p>
+                    <div class="flex items-baseline justify-center gap-1">
+                        <span class="text-5xl font-bold text-slate-900">₩0</span>
+                        <span class="text-slate-500 text-sm">/ 평생 무료</span>
+                    </div>
+                </div>
+                <ul class="space-y-3 mb-8 border-t border-slate-100 pt-6">
+                    <li class="flex items-start gap-3 text-slate-700 text-sm">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="w-5 h-5 text-indigo-600 flex-shrink-0"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" /></svg>
+                        <span>AI 웹사이트 무료 생성 (1회)</span>
+                    </li>
+                    <li class="flex items-start gap-3 text-slate-700 text-sm">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="w-5 h-5 text-indigo-600 flex-shrink-0"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" /></svg>
+                        <span>기본 템플릿 제공</span>
+                    </li>
+                    <li class="flex items-start gap-3 text-slate-700 text-sm">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="w-5 h-5 text-indigo-600 flex-shrink-0"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" /></svg>
+                        <span>커뮤니티 지원</span>
+                    </li>
+                    <li class="flex items-start gap-3 text-slate-500 text-sm opacity-60">
+                        <span>• 제한된 커스터마이징</span>
+                    </li>
+                    <li class="flex items-start gap-3 text-slate-500 text-sm opacity-60">
+                        <span>• Web Builder 하단 브랜딩 노출</span>
+                    </li>
+                </ul>
+                <button class="w-full py-3 px-6 rounded-xl font-semibold transition-all bg-slate-100 text-slate-900 hover:bg-slate-200">무료로 시작하기</button>
+            </div>
+            
+            <!-- Pro plan -->
+            <div class="bg-white rounded-2xl shadow-xl border-2 border-indigo-600 p-8 transition-all hover:shadow-2xl relative md:-mt-4">
+                <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-gradient-to-r from-indigo-600 to-purple-600 text-white px-4 py-1 rounded-full text-xs font-semibold tracking-wider">가장 인기 있음</div>
+                <div class="text-center mb-6">
+                    <h3 class="text-2xl font-bold text-slate-900 mb-2">Pro</h3>
+                    <p class="text-slate-600 text-sm mb-4">전문적인 비즈니스 웹사이트 제작을 위한 최적의 플랜</p>
+                    <div class="flex items-baseline justify-center gap-1">
+                        <span class="text-5xl font-bold text-slate-900">₩19,000</span>
+                        <span class="text-slate-500 text-sm">/ 월</span>
+                    </div>
+                </div>
+                <ul class="space-y-3 mb-8 border-t border-slate-100 pt-6">
+                    <li class="flex items-start gap-3 text-slate-700 text-sm">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="w-5 h-5 text-indigo-600 flex-shrink-0"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" /></svg>
+                        <span class="font-medium text-slate-950">무제한 웹사이트 생성</span>
+                    </li>
+                    <li class="flex items-start gap-3 text-slate-700 text-sm">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="w-5 h-5 text-indigo-600 flex-shrink-0"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" /></svg>
+                        <span>모든 프리미엄 템플릿 이용 가능</span>
+                    </li>
+                    <li class="flex items-start gap-3 text-slate-700 text-sm">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="w-5 h-5 text-indigo-600 flex-shrink-0"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" /></svg>
+                        <span>우선 순위 고객 지원</span>
+                    </li>
+                    <li class="flex items-start gap-3 text-slate-700 text-sm">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="w-5 h-5 text-indigo-600 flex-shrink-0"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" /></svg>
+                        <span>자유로운 커스터마이징</span>
+                    </li>
+                    <li class="flex items-start gap-3 text-slate-700 text-sm">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="w-5 h-5 text-indigo-600 flex-shrink-0"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" /></svg>
+                        <span class="text-indigo-600 font-medium">Web Builder 브랜딩 제거</span>
+                    </li>
+                    <li class="flex items-start gap-3 text-slate-700 text-sm">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="w-5 h-5 text-indigo-600 flex-shrink-0"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" /></svg>
+                        <span>개인 도메인 연결 (.com, .kr 등)</span>
+                    </li>
+                    <li class="flex items-start gap-3 text-slate-700 text-sm">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="w-5 h-5 text-indigo-600 flex-shrink-0"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" /></svg>
+                        <span>고급 분석 및 통계 대시보드</span>
+                    </li>
+                    <li class="flex items-start gap-3 text-slate-700 text-sm">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="w-5 h-5 text-indigo-600 flex-shrink-0"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" /></svg>
+                        <span>SEO(검색엔진) 최적화 도구</span>
+                    </li>
+                </ul>
+                <button class="w-full py-3 px-6 rounded-xl font-semibold transition-all bg-gradient-to-r from-indigo-600 to-purple-600 text-white shadow-lg hover:shadow-xl hover:-translate-y-0.5">Pro 플랜 시작하기</button>
+            </div>
+
+            <div class="bg-white rounded-2xl shadow-md border border-slate-200 p-8 transition-all hover:shadow-lg">
+                <div class="text-center mb-6">
+                    <h3 class="text-2xl font-bold text-slate-900 mb-2">Enterprise</h3>
+                    <p class="text-slate-600 text-sm mb-4">대행사 및 대규모 팀을 위한 맞춤형 플랜</p>
+                    <div class="flex items-baseline justify-center gap-1">
+                        <span class="text-5xl font-bold text-slate-900">₩99,000</span>
+                        <span class="text-slate-500 text-sm">/ 월</span>
+                    </div>
+                </div>
+                <ul class="space-y-3 mb-8 border-t border-slate-100 pt-6">
+                    <li class="flex items-start gap-3 text-slate-700 text-sm">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="w-5 h-5 text-indigo-600 flex-shrink-0"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" /></svg>
+                        <span class="font-medium text-indigo-600">Pro 플랜의 모든 기능 포함</span>
+                    </li>
+                    <li class="flex items-start gap-3 text-slate-700 text-sm">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="w-5 h-5 text-indigo-600 flex-shrink-0"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" /></svg>
+                        <span>무제한 팀원 초대 및 협업</span>
+                    </li>
+                    <li class="flex items-start gap-3 text-slate-700 text-sm">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="w-5 h-5 text-indigo-600 flex-shrink-0"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" /></svg>
+                        <span>화이트 라벨링 솔루션</span>
+                    </li>
+                    <li class="flex items-start gap-3 text-slate-700 text-sm">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="w-5 h-5 text-indigo-600 flex-shrink-0"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" /></svg>
+                        <span>전담 매니저 배정 (1:1 기술 지원)</span>
+                    </li>
+                    <li class="flex items-start gap-3 text-slate-700 text-sm">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="w-5 h-5 text-indigo-600 flex-shrink-0"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" /></svg>
+                        <span>맞춤형 시스템 연동 (API Integration)</span>
+                    </li>
+                    <li class="flex items-start gap-3 text-slate-700 text-sm">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="w-5 h-5 text-indigo-600 flex-shrink-0"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" /></svg>
+                        <span>고급 보안 솔루션 적용</span>
+                    </li>
+                </ul>
+                <button class="w-full py-3 px-6 rounded-xl font-semibold transition-all bg-slate-100 text-slate-900 hover:bg-slate-200">문의하기</button>
+            </div>
+        </div>
+
+        <div class="bg-white rounded-2xl shadow-sm border border-slate-200 p-12 max-w-4xl mx-auto">
+            <h2 class="text-3xl font-bold text-slate-900 text-center mb-10">자주 묻는 질문 (FAQ)</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div>
+                    <h3 class="font-semibold text-slate-900 mb-2">나중에 플랜을 변경할 수 있나요?</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">네, 언제든지 플랜을 업그레이드하거나 다운그레이드할 수 있습니다. 변경 사항은 즉시 계정에 적용됩니다.</p>
+                </div>
+                <div>
+                    <h3 class="font-semibold text-slate-900 mb-2">무료로 생성한 사이트는 평생 유지되나요?</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">네, Free 플랜에서 AI로 생성한 1개의 웹사이트는 기간 제한 없이 평생 무료로 유지됩니다.</p>
+                </div>
+                <div>
+                    <h3 class="font-semibold text-slate-900 mb-2">어떤 결제 수단을 사용할 수 있나요?</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">국내외 모든 주요 신용카드, 간편결제(카카오페이/토스페이) 및 계좌이체를 통한 결제를 지원합니다.</p>
+                </div>
+                <div>
+                    <h3 class="font-semibold text-slate-900 mb-2">환불 조건은 어떻게 되나요?</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">유료 결제 후 서비스 이용 내역이 없는 경우, 결제일로부터 14일 이내에 고객센터를 통해 100% 환불을 받으실 수 있습니다.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="text-center mt-24">
+            <h2 class="text-3xl font-bold text-slate-900 mb-4">지금 나만의 웹사이트를 만들어보세요</h2>
+            <p class="text-lg text-slate-600 mb-8">이미 수많은 사용자들이 Web Builder를 통해 코딩 없이 멋진 페이지를 구축하고 있습니다.</p>
+            <a href="builder.html" class="inline-flex px-8 py-4 bg-gradient-to-r from-indigo-600 to-purple-600 text-white rounded-xl font-semibold shadow-lg hover:shadow-xl transition-all hover:-translate-y-0.5">지금 시작하기</a>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-white border-t border-slate-200 mt-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <section>
+                    <div class="flex items-center gap-2 mb-4">
+                        <span class="text-white w-8 h-8 bg-gradient-to-br from-indigo-500 to-purple-500 rounded-lg flex items-center justify-center">W</span>
+                        <span class="font-semibold bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">Web Builder</span>
+                    </div>
+                    <p class="text-sm text-slate-600">직관적인 플랫폼으로 단 몇 분 만에 아름다운 웹사이트를 제작하세요!</p>
+                </section>
+                <section>
+                    <h3 class="font-semibold text-slate-900 mb-4">Product</h3>
+                    <ul class="space-y-2 text-sm text-slate-600">
+                        <li><a href="templates.html" class="transition-colors hover:text-indigo-600">템플릿</a></li>
+                        <li><a href="builder.html" class="transition-colors hover:text-indigo-600">기능</a></li>
+                        <li><a href="pricing.html" class="transition-colors hover:text-indigo-600">가격</a></li>
+                    </ul>
+                </section>
+                <section>
+                    <h3 class="font-semibold text-slate-900 mb-4">Company</h3>
+                    <ul class="space-y-2 text-sm text-slate-600">
+                        <li><a href="#" class="transition-colors hover:text-indigo-600">소개</a></li>
+                        <li><a href="#" class="transition-colors hover:text-indigo-600">블로그</a></li>
+                    </ul>
+                </section>
+                <section>
+                    <h3 class="font-semibold text-slate-900 mb-4">Support</h3>
+                    <ul class="space-y-2 text-sm text-slate-600">
+                        <li><a href="#" class="transition-colors hover:text-indigo-600">도움말 센터</a></li>
+                        <li><a href="#" class="transition-colors hover:text-indigo-600">개인정보 처리방침</a></li>
+                    </ul>
+                </section>
+            </div>
+            <div class="border-t border-slate-200 mt-8 pt-8 text-center text-sm text-slate-500">
+                © 2026 Web Builder. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/navbar.js"></script>
+</body>
+</html>
