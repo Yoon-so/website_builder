@@ -605,46 +605,64 @@ function initAdvancedBuilder() {
             .filter(input => state.components.includes(input.value))
             .map(input => `${input.value} (${input.closest('label')?.querySelector('span')?.innerText.trim() || input.value})`);
 
-        return `당신은 세계 최고의 웹 퍼블리셔입니다. 사용자가 선택한 모든 설정을 바탕으로 완성도 높은 웹사이트를 구현하세요.
+        return `당신은 세계 최고 수준의 웹 디자이너, UX 전략가, UI/UX 전문가, 프론트엔드 엔지니어입니다.
+                사용자가 제공한 웹사이트 설정을 분석하여 현대적이고 완성도 높은 웹사이트를 생성하세요.
+                결과물은 반드시 하나의 실행 가능한 HTML 문서여야 합니다.
+                
+                [1. 웹사이트 정보]
+                - 웹사이트 유형: ${state.selectedType}
+                - 웹사이트 이름: ${state.siteName || '나의 멋진 사이트'}
+                ${state.companyName ? `- 회사명/브랜드명: ${state.companyName}` : ''}
+                - 서비스/사이트 설명: ${state.siteDesc || '이 사이트는 AI 웹사이트 빌더로 만들어졌습니다.'}
 
-[1. 웹사이트 기본 정보]
-- 웹사이트 유형: ${state.selectedType}
-- 웹사이트 이름: ${state.siteName || '나의 멋진 사이트'}
-${state.companyName ? `- 회사명/브랜드명: ${state.companyName}` : ''}
-- 서비스/사이트 설명: ${state.siteDesc || '이 사이트는 AI 웹사이트 빌더로 만들어졌습니다.'}
+                [2. 연락처, 푸터, 소셜 정보]
+                ${state.contactEmail ? `- 이메일: ${state.contactEmail}` : ''}
+                ${state.contactPhone ? `- 전화번호: ${state.contactPhone}` : ''}
+                ${state.contactAddress ? `- 주소: ${state.contactAddress}` : ''}
+                ${state.socials.facebook ? `- Facebook: ${state.socials.facebook}` : ''}
+                ${state.socials.x ? `- X/Twitter: ${state.socials.x}` : ''}
+                ${state.socials.instagram ? `- Instagram: ${state.socials.instagram}` : ''}
+                ${state.socials.linkedin ? `- LinkedIn: ${state.socials.linkedin}` : ''}
 
-[2. 연락처, 푸터, 소셜 정보]
-${state.contactEmail ? `- 이메일: ${state.contactEmail}` : ''}
-${state.contactPhone ? `- 전화번호: ${state.contactPhone}` : ''}
-${state.contactAddress ? `- 주소: ${state.contactAddress}` : ''}
-${state.socials.facebook ? `- Facebook: ${state.socials.facebook}` : ''}
-${state.socials.x ? `- X/Twitter: ${state.socials.x}` : ''}
-${state.socials.instagram ? `- Instagram: ${state.socials.instagram}` : ''}
-${state.socials.linkedin ? `- LinkedIn: ${state.socials.linkedin}` : ''}
+                [3. 레이아웃 및 기능 요구사항]
+                - 반드시 포함해야 할 컴포넌트 목록: ${selectedComponentLabels.join(', ') || '기본 랜딩페이지 구성'}
+                - 헤더 스타일: ${state.headerStyle}
+                - 콘텐츠 표시 방식: ${state.contentDisplay}
+                - 사이드바 사용 여부: ${state.sidebarEnabled ? '사용' : '사용 안 함'}
+                - 그리드 열 개수: ${state.gridColumns}
 
-[3. 레이아웃 및 기능 요구사항]
-- 반드시 포함해야 할 컴포넌트 목록: ${selectedComponentLabels.join(', ') || '기본 랜딩페이지 구성'}
-- 헤더 스타일: ${state.headerStyle}
-- 콘텐츠 표시 방식: ${state.contentDisplay}
-- 사이드바 사용 여부: ${state.sidebarEnabled ? '사용' : '사용 안 함'}
-- 그리드 열 개수: ${state.gridColumns}
+                [4. 스타일 요구사항]
+                - 메인 컬러: ${state.mainColor}
+                - 서브 컬러: ${state.subColor}
+                - 기본 폰트: ${state.fontFamily}
+                - 버튼 모서리 스타일: ${state.buttonRadius}
+                - 다크 모드: ${state.darkMode ? '활성화' : '비활성화'}
+                - 선택 요소별 인라인 스타일 오버라이드: ${JSON.stringify(state.elementStyles)}
 
-[4. 스타일 요구사항]
-- 메인 컬러: ${state.mainColor}
-- 서브 컬러: ${state.subColor}
-- 기본 폰트: ${state.fontFamily}
-- 버튼 모서리 스타일: ${state.buttonRadius}
-- 다크 모드: ${state.darkMode ? '활성화' : '비활성화'}
-- 선택 요소별 인라인 스타일 오버라이드: ${JSON.stringify(state.elementStyles)}
+                [5. 사용자의 추가 요청사항]
+                ${state.additionalRequests || 'None'}
 
-[5. 사용자의 추가 요청사항]
-${state.additionalRequests || 'None'}
+                [제약조건 - STRICT]
 
-[제약조건 - STRICT]
-- Tailwind CSS를 사용하여 스타일링할 것이므로, HTML <head> 내에 반드시 다음 CDN 스크립트를 포함하세요: <script src="https://cdn.tailwindcss.com"></script>
-- 위의 모든 입력값, 체크박스, 레이아웃, 색상, 폰트, 버튼 스타일, 다크 모드, 소셜 링크, 연락처 정보를 결과물에 반영하세요.
-- 결과물은 다른 설명 없이 오직 실행 가능한 하나의 HTML 파일 코드(<!DOCTYPE html>로 시작해서 </html>로 끝남) 형태로만 반환하세요.
-- 마크다운 (\`\`\`html) 기호는 절대 붙이지 마세요.`;
+                [인터랙션 요구사항]
+                - 네비게이션 메뉴는 정상적으로 동작해야 합니다.
+                - 모바일 메뉴는 정상적으로 열리고 닫혀야 합니다.
+                - 탭(Tab), 아코디언(Accordion), 카드(Card), 기타 인터랙티브 섹션은 실제로 동작해야 합니다.
+                - 모든 버튼은 의미 있는 동작 또는 시각적 피드백(Hover, Active, Animation 등)을 제공해야 합니다.
+                - JavaScript는 필요한 경우에만 사용하고 불필요한 복잡성은 피하세요.
+
+                [기술 요구사항]
+                - 위의 모든 입력값, 체크박스, 레이아웃, 색상, 폰트, 버튼 스타일, 다크 모드, 소셜 링크, 연락처 정보를 결과물에 반영하세요.
+                - 결과물은 다른 설명 없이 오직 실행 가능한 하나의 HTML 파일 코드(<!DOCTYPE html>로 시작해서 </html>로 끝남) 형태로만 반환하세요.
+                - 필요한 모든 CSS와 JavaScript를 HTML 내부에 포함하세요.
+                - Tailwind CSS를 사용하여 스타일링할 것이므로, HTML <head> 내에 반드시 다음 CDN 스크립트를 포함하세요: <script src="https://cdn.tailwindcss.com"></script>
+                - HTML, CSS, JavaScript 코드가 모두 유효해야 합니다.
+                - 모든 태그, 함수, 객체, 배열, 괄호를 올바르게 닫으세요.
+                - 문서는 반드시 <!DOCTYPE html>로 시작하고 </html>로 끝나야 합니다.
+                - 실행 가능한 HTML 코드만 반환하세요.
+                - 마크다운 (\`\`\`html) 기호는 절대 붙이지 마세요.
+                - 설명, 주석, 해설 문장은 포함하지 마세요.
+                - 반드시 완전한 HTML 문서를 반환하세요.`;
     }
 
     function updateGridRangeLabel() {
