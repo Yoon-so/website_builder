@@ -46,7 +46,7 @@ function initAdvancedBuilder() {
 
     const STATE_KEY = 'advanced-builder-state';
     const PREVIEW_JOB_KEY = 'advanced-builder-preview-job';
-    const PREVIEW_URL = 'preview.html';
+    const PREVIEW_URL = 'preview_demo.html';
     const API_MODEL = 'gemini-1.5-flash'; 
     const progressMessages = [
         'Analyzing requirements...',
