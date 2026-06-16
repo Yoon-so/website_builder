@@ -14,7 +14,7 @@
 <body class="font-sans m-0">
     <!-- Fixed Navigation Bar -->
     <nav class="fixed top-0 left-0 right-0 bg-white shadow-md z-40">
-        <div class="flex justify-between items-center px-20 py-4">
+        <div class="flex justify-between items-center px-6 lg:px-20 py-4">
             <!-- Left: Web Builder Button -->
             <a href="index.html" class="flex items-center gap-2 hover:cursor-pointer group">
                 <!-- Icon -->
@@ -24,32 +24,54 @@
                 <span class="text-xl font-semibold bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">Web Builder</span>
             </a>
 
-            <!-- Right: Navigation Buttons -->
-            <div class="flex gap-6 items-center">
+            <!-- Right: Navigation -->
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex gap-6 items-center">
                 <!-- 템플릿 Button -->
-                <a href="templates.html" data-nav-link="templates.html" class="text-slate-600 font-normal hover:text-slate-800 transition-colors duration-200 hover:cursor-pointer">
+                <a href="templates.html" data-nav-link="templates.html" class="font-normal transition-colors duration-200">
                     템플릿
                 </a>
 
                 <!-- 웹 페이지 만들기 Button -->
-                <a href="builder.html" data-nav-link="builder.html" class="text-slate-600 font-normal hover:text-slate-800 transition-colors duration-200 hover:cursor-pointer">
+                <a href="builder.html" data-nav-link="builder.html" class="font-normal transition-colors duration-200">
                     웹사이트 만들기
                 </a>
 
                 <!-- 요금제 Button -->
-                <a href="pricing.html" data-nav-link="pricing.html" class="text-slate-600 font-normal hover:text-slate-800 transition-colors duration-200 hover:cursor-pointer">
+                <a href="pricing.html" data-nav-link="pricing.html" class="font-normal transition-colors duration-200">
                     요금제
                 </a>
 
                 <!-- 로그인 Button with Icon -->
-                <a href="login.html" class="flex items-center gap-2 px-4 py-2 text-sm font-medium text-slate-600 hover:text-slate-900 transition-colors border border-slate-200 rounded-lg hover:border-slate-300 hover:cursor-pointer">
+                <a id="desktop-auth-link" href="login.html" class="flex items-center gap-2 px-4 py-2 text-sm font-medium transition-colors border border-slate-200 rounded-lg hover:border-slate-300">
                     <!-- Login Icon -->
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4">
                         <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path>
                         <circle cx="12" cy="7" r="4"></circle>
                     </svg>
-                    <span>로그인</span>
+                    <span id="desktop-auth-label"></span>
                 </a>
+            </div>
+            
+            <!-- Mobile Hambburger -->
+            <button id="menuBtn" class="block md:hidden text-slate-500">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+            
+            <!-- Mobile Menu -->
+            <div id="mobileMenu" class="hidden md:hidden absolute top-full left-0 w-full bg-white shadow-lg border-t border-slate-200">
+                <div class="flex flex-col">
+                    
+                    <a href="templates.html" data-nav-link="templates.html" class="px-6 py-4 text-slate-600 hover:bg-indigo-50 transition text-center">템플릿</a>
+
+                    <a href="builder.html" data-nav-link="builder.html" class="px-6 py-4 text-slate-600 hover:bg-indigo-50 transition text-center">웹사이트 만들기</a>
+
+                    <a href="pricing.html" data-nav-link="pricing.html" class="px-6 py-4 text-slate-600 hover:bg-indigo-50 transition text-center">요금제</a>
+
+                    <a id="mobile-auth-link" href="login.html" class="px-6 py-4 text-slate-600 hover:bg-indigo-50 transition text-center"><span id="mobile-auth-label">로그인</span></a>
+                </div>
             </div>
         </div>
     </nav>
@@ -432,5 +454,8 @@
     </footer>
 
     <script src="js/navbar.js"></script>
+    <script src="js/config.js"></script>
+
+    <script type="module" src="js/auth-nav.js"></script>
 </body>
 </html>

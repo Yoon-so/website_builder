@@ -47,7 +47,7 @@ async function handleLogin(event) {
     try {
         didSubmitAuthForm = true;
         await signInWithEmailAndPassword(auth, email, password);
-        showStatus("Login successful. Redirecting...", false);
+        showStatus("로그인 성공. 이동 중....", false);
 
         setTimeout(() => {
           window.location.href = "profile.html?welcome=login";
@@ -78,7 +78,7 @@ async function handleRegister(event) {
             createdAt: serverTimestamp()
         });
 
-        showStatus("Account created. Redirecting...", false);
+        showStatus("계정 생성 완료. 이동 중...", false);
         
         setTimeout(() => {
           window.location.href = "profile.html?welcome=register";
@@ -117,13 +117,13 @@ function handleAuthError(error) {
 
 function readableAuthError(error) {
     const messages = {
-        "auth/email-already-in-use": "This email is already registered.",
-        "auth/invalid-email": "Please enter a valid email address.",
-        "auth/invalid-credential": "Email or password is incorrect.",
-        "auth/missing-password": "Please enter your password.",
-        "auth/weak-password": "Password must be at least 6 characters.",
-        "auth/network-request-failed": "Network error. Please try again."
+        "auth/email-already-in-use": "이미 등록된 이메일입니다.",
+        "auth/invalid-email": "유효한 이메일 주소를 입력해 주세요.",
+        "auth/invalid-credential": "이메일 또는 비밀번호가 올바르지 않습니다.",
+        "auth/missing-password": "비밀번호를 입력해 주세요.",
+        "auth/weak-password": "비밀번호는 최소 6자 이상이어야 합니다.",
+        "auth/network-request-failed": "네트워크 오류가 발생했습니다. 다시 시도해 주세요."
     };
 
-    return messages[error?.code] || error?.message || "Authentication failed. Please try again.";
+    return messages[error?.code] || error?.message || "인증에 실패했습니다. 다시 시도해 주세요.";
 }

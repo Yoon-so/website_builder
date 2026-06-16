@@ -7,29 +7,7 @@ if (!window.AI_CONFIG || !window.AI_CONFIG.GEMINI_API_KEY) {
     console.error("AI_CONFIG is not properly set. AI generation will show an error in preview.html.");
 }
 
-initBuilderAuthNav();
 initAdvancedBuilder();
-
-function initBuilderAuthNav() {
-    const authLink = document.getElementById('auth-nav-link');
-    const authLabel = document.getElementById('auth-nav-label');
-
-    if (!authLink || !authLabel) return;
-
-    onAuthStateChanged(auth, (user) => {
-        if (!user) {
-            authLink.href = 'login.html';
-            authLabel.textContent = '로그인';
-            authLink.title = '로그인';
-            return;
-        }
-
-        const label = user.displayName || user.email?.split('@')[0] || 'Profile';
-        authLink.href = 'profile.html';
-        authLabel.textContent = label;
-        authLink.title = user.email || label;
-    });
-}
 
 function initAdvancedBuilder() {
     const form = document.querySelector('form');
@@ -367,8 +345,8 @@ function initAdvancedBuilder() {
 
     async function requestGeneratedWebsite() {
         const API_KEY = window.AI_CONFIG.GEMINI_API_KEY;
-        const API_URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-3-flash-preview:generateContent?key=${API_KEY}`;
-        //gemini-3.1-flash-lite
+        const API_URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-3.1-flash-lite:generateContent?key=${API_KEY}`;
+        //gemini-3-flash-preview
         //https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?
         //https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent?
         const response = await fetch(API_URL, {

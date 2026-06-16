@@ -1,6 +1,9 @@
 const navLinks = document.querySelectorAll("[data-nav-link]");
+const mobileMenu = document.getElementById("mobileMenu");
+const menuBtn = document.getElementById("menuBtn");
+
 const navActiveClasses = ["text-indigo-500", "hover:text-indigo-700"];
-const navInactiveClasses = ["text-slate-600", "hover:text-slate-800"];
+const navInactiveClasses = ["text-slate-600", "hover:text-slate-900"];
 
 const currentPage = window.location.pathname.split("/").pop() || "index.html";
 
@@ -9,4 +12,8 @@ navLinks.forEach((link) => {
 
     link.classList.remove(...navActiveClasses, ...navInactiveClasses);
     link.classList.add(...(isActive ? navActiveClasses : navInactiveClasses));
+});
+
+menuBtn.addEventListener("click", () => {
+    mobileMenu.classList.toggle("hidden");
 });
