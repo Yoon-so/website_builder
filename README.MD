@@ -92,6 +92,7 @@ project/
 ├── templates/
 │   ├── template-blog-1.html
 │   ├── template-portfolio-1.html
+│   ├── template-streaming-1.html
 │   └── template-example.html
 │
 ├── index.html
