@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>템플릿 예시 - Web builder</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#6366f1',
+            secondary: '#f472b6'
+          },
+          borderRadius: {
+            btn: '0.5rem'
+          }
+        }
+      }
+    }
+  </script>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+    html { scroll-behavior: smooth; }
+  </style>
+</head>
+
+<body class="bg-slate-50 text-slate-900">
+
+  <!-- Top Bar -->
+  <div class="bg-indigo-500 text-white text-sm px-4 py-2 flex items-center gap-2 sticky top-0 z-50 h-10">
+    <a class="flex items-center gap-1 hover:text-blue-200 transition-colors" href="../templates.html">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+           stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+           class="w-4 h-4">
+        <path d="m12 19-7-7 7-7"></path>
+        <path d="M19 12H5"></path>
+      </svg>
+      템플릿으로 돌아가기
+    </a>
+
+    <span class="ml-auto opacity-60">미리보기: 템플릿 예시</span>
+  </div>
+
+  <!-- Nav Inner -->
+  <header class="bg-white shadow-sm sticky top-10 z-40">
+    <nav class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-center">
+      <h1 class="text-2xl font-extrabold tracking-tighter text-primary">
+        템플릿
+      </h1>
+
+      <div class="w-16"></div>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- HERO -->
+    <section class="py-20 px-6 bg-gradient-to-br from-primary to-secondary text-white text-center">
+      <h2 class="text-5xl font-extrabold mb-6">
+        당신의 일상을 디자인하다
+      </h2>
+
+      <p class="text-xl opacity-90 mb-10 max-w-2xl mx-auto">
+        엄선된 제품들로 당신의 공간을 더욱 특별하게 만드세요.
+      </p>
+
+      <button class="bg-white text-primary px-8 py-4 rounded-btn font-bold hover:shadow-lg transition">
+        지금 쇼핑하기
+      </button>
+    </section>
+
+    <!-- Products -->
+    <section id="products" class="py-20 px-6 max-w-7xl mx-auto">
+      <h3 class="text-3xl font-bold mb-12 text-center">베스트 셀러</h3>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+        <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 hover:border-indigo-500">
+          <div class="h-64 bg-slate-100 rounded-lg mb-6"></div>
+          <h4 class="text-xl font-semibold mb-2">미니멀 데스크 램프</h4>
+          <p class="text-slate-500 mb-4">공간의 분위기를 바꾸는 따뜻한 빛</p>
+          <span class="font-bold text-primary">₩89,000</span>
+        </div>
+
+        <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 hover:border-indigo-500">
+          <div class="h-64 bg-slate-100 rounded-lg mb-6"></div>
+          <h4 class="text-xl font-semibold mb-2">친환경 세라믹 화분</h4>
+          <p class="text-slate-500 mb-4">자연과 어우러지는 감각적인 디자인</p>
+          <span class="font-bold text-primary">₩42,000</span>
+        </div>
+
+        <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 hover:border-indigo-500">
+          <div class="h-64 bg-slate-100 rounded-lg mb-6"></div>
+          <h4 class="text-xl font-semibold mb-2">패브릭 모듈 소파</h4>
+          <p class="text-slate-500 mb-4">당신의 휴식을 위한 완벽한 선택</p>
+          <span class="font-bold text-primary">₩1,250,000</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-20 bg-slate-900 text-white px-6">
+            <div class="max-w-4xl mx-auto text-center">
+                <h3 class="text-3xl font-bold mb-8">템플릿만의 약속</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 text-left">
+                    <div class="p-6 border border-slate-700 rounded-btn">
+                        <h4 class="font-bold mb-2">무료 배송 서비스</h4>
+                        <p class="text-slate-400">전국 어디든 5만원 이상 구매 시 무료 배송 혜택을 드립니다.</p>
+                    </div>
+                    <div class="p-6 border border-slate-700 rounded-btn">
+                        <h4 class="font-bold mb-2">프리미엄 품질 보증</h4>
+                        <p class="text-slate-400">엄격한 검수를 통과한 제품만을 엄선하여 배송합니다.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="py-20 px-6 max-w-4xl mx-auto">
+            <h3 class="text-3xl font-bold mb-12 text-center">자주 묻는 질문</h3>
+            <div class="space-y-4" id="faq">
+                <details class="bg-white p-6 rounded-btn shadow-sm cursor-pointer">
+                    <summary class="font-bold">배송은 얼마나 걸리나요?</summary>
+                    <p class="mt-4 text-slate-600">일반적으로 결제 완료 후 2~3일 이내에 배송이 시작됩니다.</p>
+                </details>
+                <details class="bg-white p-6 rounded-btn shadow-sm cursor-pointer">
+                    <summary class="font-bold">교환 및 환불 정책은 어떻게 되나요?</summary>
+                    <p class="mt-4 text-slate-600">제품 수령 후 7일 이내에 고객센터를 통해 접수해주시면 친절히 안내해드립니다.</p>
+                </details>
+            </div>
+        </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-white border-t border-slate-200 py-12 px-6">
+    <div class="max-w-7xl mx-auto text-center">
+      <p class="text-slate-600 mb-4">문의: 010-1234-5678</p>
+      <p class="text-slate-400 text-sm">© 2024 템플릿</p>
+    </div>
+  </footer>
+    <script>
+        document.querySelectorAll('details').forEach((el) => {
+            el.addEventListener('click', () => {
+                document.querySelectorAll('details').forEach((item) => {
+                    if (item !== el) item.removeAttribute('open');
+                });
+            });
+        });
+    </script>
+</body>
+</html>

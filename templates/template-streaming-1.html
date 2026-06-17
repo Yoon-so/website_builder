@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Watch Tube - 나의 멋진 사이트</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#ff0000',
+                        secondary: '#ff9500',
+                    },
+                    borderRadius: {
+                        'custom': '0.5rem',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
+        .gradient-text {
+            background: linear-gradient(90deg, #ff0000, #ff9500);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .video-card:hover img { transform: scale(1.05); }
+        .nav-link:after {
+            content: '';
+            display: block;
+            width: 0;
+            height: 2px;
+            background: #ff0000;
+            transition: width .3s;
+        }
+        .nav-link:hover:after { width: 100%; }
+    </style>
+</head>
+<body class="bg-white text-gray-900">
+    
+  <!-- Top Bar -->
+  <div class="bg-red-300 text-black text-sm px-4 py-2 flex items-center gap-2 sticky top-0 z-50 h-10">
+    <a class="flex items-center gap-1 hover:text-blue-200 transition-colors" href="../templates.html">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+           stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+           class="w-4 h-4">
+        <path d="m12 19-7-7 7-7"></path>
+        <path d="M19 12H5"></path>
+      </svg>
+      템플릿으로 돌아가기
+    </a>
+
+    <span class="ml-auto opacity-60">미리보기: 스트리밍</span>
+  </div>
+
+    <!-- Header -->
+    <header class="bg-white/90 backdrop-blur-md border-b border-gray-100 sticky top-10 z-40">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex flex-col items-center">
+                <a href="#" class="text-2xl font-extrabold tracking-tighter text-primary mb-4">
+                    WATCH<span class="text-secondary">TUBE</span>
+                </a>
+                <nav class="hidden md:flex space-x-8 text-sm font-medium uppercase tracking-widest">
+                    <a href="#home" class="nav-link">Home</a>
+                    <a href="#trending" class="nav-link">Trending</a>
+                    <a href="#features" class="nav-link">Features</a>
+                    <a href="#pricing" class="nav-link">Premium</a>
+                    <a href="#contact" class="nav-link">Contact</a>
+                </nav>
+                <button id="mobile-menu-btn" class="md:hidden absolute right-6 top-6 text-gray-600">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden bg-white border-t border-gray-100 p-6 flex flex-col space-y-4 text-center md:hidden">
+            <a href="#home" class="font-bold">Home</a>
+            <a href="#trending" class="font-bold">Trending</a>
+            <a href="#features" class="font-bold">Features</a>
+            <a href="#pricing" class="font-bold">Premium</a>
+            <a href="#contact" class="font-bold">Contact</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="pt-40 pb-20 px-6">
+        <div class="container mx-auto text-center">
+            <h1 class="text-5xl md:text-7xl font-black mb-6 leading-tight">
+                세상의 모든 감동을<br><span class="gradient-text">하나의 튜브에 담다</span>
+            </h1>
+            <p class="text-xl text-gray-500 max-w-2xl mx-auto mb-10">
+                웹사이트 설명을 입력하면 이 영역에 반영됩니다. Watch Tube는 당신의 일상을 특별한 시네마틱 경험으로 변화시키는 차세대 비디오 큐레이션 플랫폼입니다.
+            </p>
+            <div class="flex flex-col md:flex-row justify-center gap-4">
+                <a href="#trending" class="bg-primary text-white px-8 py-4 rounded-custom font-bold hover:bg-opacity-90 transition transform hover:-translate-y-1 shadow-lg shadow-primary/20">
+                    지금 시청하기
+                </a>
+                <a href="#features" class="bg-gray-100 text-gray-800 px-8 py-4 rounded-custom font-bold hover:bg-gray-200 transition">
+                    서비스 알아보기
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-24 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-3 gap-12">
+                <div class="bg-white p-10 rounded-custom shadow-sm border border-gray-100 hover:shadow-xl transition">
+                    <div class="w-14 h-14 bg-primary/10 flex items-center justify-center rounded-full mb-6">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">4K Ultra HD 스트리밍</h3>
+                    <p class="text-gray-600 leading-relaxed">끊김 없는 초고화질 영상으로 압도적인 몰입감을 경험하세요. 어떤 기기에서도 최적의 화질을 보장합니다.</p>
+                </div>
+                <div class="bg-white p-10 rounded-custom shadow-sm border border-gray-100 hover:shadow-xl transition">
+                    <div class="w-14 h-14 bg-secondary/10 flex items-center justify-center rounded-full mb-6">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-secondary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">AI 개인 맞춤 추천</h3>
+                    <p class="text-gray-600 leading-relaxed">당신의 시청 패턴을 분석하여 취향에 딱 맞는 콘텐츠를 실시간으로 제안합니다. 검색의 번거로움을 줄이세요.</p>
+                </div>
+                <div class="bg-white p-10 rounded-custom shadow-sm border border-gray-100 hover:shadow-xl transition">
+                    <div class="w-14 h-14 bg-primary/10 flex items-center justify-center rounded-full mb-6">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">글로벌 커뮤니티</h3>
+                    <p class="text-gray-600 leading-relaxed">전 세계 제작자 및 시청자와 소통하세요. 당신의 생각을 공유하고 새로운 영감을 얻을 수 있습니다.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trending Content Grid (3 columns) -->
+    <section id="trending" class="py-24">
+        <div class="container mx-auto px-6">
+            <div class="flex justify-between items-end mb-12">
+                <div>
+                    <h2 class="text-3xl font-black mb-2">실시간 인기 트렌드</h2>
+                    <p class="text-gray-500">현재 가장 많은 사랑을 받고 있는 비디오 리스트입니다.</p>
+                </div>
+                <a href="#" class="text-primary font-bold hover:underline">전체보기 &rarr;</a>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Video Item 1 -->
+                <div class="video-card group cursor-pointer">
+                    <div class="relative overflow-hidden rounded-custom mb-4 aspect-video">
+                        <img src="https://images.unsplash.com/photo-1492691523567-6170c3295db5?auto=format&fit=crop&q=80&w=800" alt="Trend 1" class="w-full h-full object-cover transition duration-500">
+                        <div class="absolute bottom-3 right-3 bg-black/80 text-white text-xs px-2 py-1 rounded">12:45</div>
+                    </div>
+                    <h4 class="font-bold text-lg group-hover:text-primary transition mb-1">자연의 신비: 아이슬란드의 새벽</h4>
+                    <p class="text-sm text-gray-500">Nature Channel • 조회수 1.2M • 2일 전</p>
+                </div>
+                <!-- Video Item 2 -->
+                <div class="video-card group cursor-pointer">
+                    <div class="relative overflow-hidden rounded-custom mb-4 aspect-video">
+                        <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&q=80&w=800" alt="Trend 2" class="w-full h-full object-cover transition duration-500">
+                        <div class="absolute bottom-3 right-3 bg-black/80 text-white text-xs px-2 py-1 rounded">08:20</div>
+                    </div>
+                    <h4 class="font-bold text-lg group-hover:text-primary transition mb-1">미래 기술: 2024년 데스크탑 셋업</h4>
+                    <p class="text-sm text-gray-500">Tech Insider • 조회수 850K • 5시간 전</p>
+                </div>
+                <!-- Video Item 3 -->
+                <div class="video-card group cursor-pointer">
+                    <div class="relative overflow-hidden rounded-custom mb-4 aspect-video">
+                        <img src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&q=80&w=800" alt="Trend 3" class="w-full h-full object-cover transition duration-500">
+                        <div class="absolute bottom-3 right-3 bg-black/80 text-white text-xs px-2 py-1 rounded">24:10</div>
+                    </div>
+                    <h4 class="font-bold text-lg group-hover:text-primary transition mb-1">어쿠스틱 세션: 비 오는 날 듣기 좋은 음악</h4>
+                    <p class="text-sm text-gray-500">Music Tube • 조회수 3.1M • 1주일 전</p>
+                </div>
+                <!-- Video Item 4 -->
+                <div class="video-card group cursor-pointer">
+                    <div class="relative overflow-hidden rounded-custom mb-4 aspect-video">
+                        <img src="https://images.unsplash.com/photo-1470225620780-dba8ba36b745?auto=format&fit=crop&q=80&w=800" alt="Trend 4" class="w-full h-full object-cover transition duration-500">
+                        <div class="absolute bottom-3 right-3 bg-black/80 text-white text-xs px-2 py-1 rounded">15:30</div>
+                    </div>
+                    <h4 class="font-bold text-lg group-hover:text-primary transition mb-1">월드 투어: 숨겨진 유럽의 보석들</h4>
+                    <p class="text-sm text-gray-500">Traveler J • 조회수 420K • 3일 전</p>
+                </div>
+                <!-- Video Item 5 -->
+                <div class="video-card group cursor-pointer">
+                    <div class="relative overflow-hidden rounded-custom mb-4 aspect-video">
+                        <img src="https://images.unsplash.com/photo-1498837167922-ddd27525d352?auto=format&fit=crop&q=80&w=800" alt="Trend 5" class="w-full h-full object-cover transition duration-500">
+                        <div class="absolute bottom-3 right-3 bg-black/80 text-white text-xs px-2 py-1 rounded">06:15</div>
+                    </div>
+                    <h4 class="font-bold text-lg group-hover:text-primary transition mb-1">셰프의 레시피: 15분 완성 파스타</h4>
+                    <p class="text-sm text-gray-500">Cook Master • 조회수 2.5M • 4일 전</p>
+                </div>
+                <!-- Video Item 6 -->
+                <div class="video-card group cursor-pointer">
+                    <div class="relative overflow-hidden rounded-custom mb-4 aspect-video">
+                        <img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?auto=format&fit=crop&q=80&w=800" alt="Trend 6" class="w-full h-full object-cover transition duration-500">
+                        <div class="absolute bottom-3 right-3 bg-black/80 text-white text-xs px-2 py-1 rounded">30:00</div>
+                    </div>
+                    <h4 class="font-bold text-lg group-hover:text-primary transition mb-1">데일리 루틴: 아침 6시 요가 세션</h4>
+                    <p class="text-sm text-gray-500">Healthy Life • 조회수 1.1M • 10시간 전</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="py-24 bg-gray-900 text-white">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-4xl font-black mb-4">더 강력한 경험, <span class="text-secondary">PREMIUM</span></h2>
+            <p class="text-gray-400 mb-16">광고 없이 즐기는 무한한 콘텐츠의 세계</p>
+            
+            <div class="max-w-md mx-auto bg-white/5 border border-white/10 p-10 rounded-2xl backdrop-blur-sm">
+                <span class="bg-primary text-xs font-bold px-3 py-1 rounded-full uppercase mb-4 inline-block">Best Value</span>
+                <h3 class="text-2xl font-bold mb-2">Watch Tube Pass</h3>
+                <div class="text-5xl font-black mb-6">₩9,900<span class="text-lg text-gray-400 font-normal">/월</span></div>
+                <ul class="text-left space-y-4 mb-10 text-gray-300">
+                    <li class="flex items-center">
+                        <svg class="w-5 h-5 text-secondary mr-3" fill="currentColor" viewBox="0 0 20 20"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"></path></svg>
+                        모든 영상 광고 제거
+                    </li>
+                    <li class="flex items-center">
+                        <svg class="w-5 h-5 text-secondary mr-3" fill="currentColor" viewBox="0 0 20 20"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"></path></svg>
+                        오프라인 저장 및 감상
+                    </li>
+                    <li class="flex items-center">
+                        <svg class="w-5 h-5 text-secondary mr-3" fill="currentColor" viewBox="0 0 20 20"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"></path></svg>
+                        백그라운드 재생 지원
+                    </li>
+                    <li class="flex items-center">
+                        <svg class="w-5 h-5 text-secondary mr-3" fill="currentColor" viewBox="0 0 20 20"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"></path></svg>
+                        독점 오리지널 콘텐츠 시청
+                    </li>
+                </ul>
+                <button class="w-full bg-secondary text-white py-4 rounded-custom font-bold hover:scale-105 transition shadow-lg shadow-secondary/20">멤버십 시작하기</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-24 bg-white">
+        <div class="container mx-auto px-6 max-w-3xl">
+            <h2 class="text-3xl font-black text-center mb-12">자주 묻는 질문</h2>
+            <div class="space-y-4">
+                <div class="border border-gray-200 rounded-custom overflow-hidden">
+                    <button class="faq-toggle w-full p-6 text-left font-bold flex justify-between items-center hover:bg-gray-50">
+                        <span>멤버십 결제 수단은 어떤 것들이 있나요?</span>
+                        <svg class="w-5 h-5 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
+                    <div class="faq-content hidden p-6 text-gray-600 bg-gray-50 border-t border-gray-200">
+                        신용카드, 체크카드, 간편결제(카카오페이, 네이버페이) 및 휴대폰 결제가 가능합니다.
+                    </div>
+                </div>
+                <div class="border border-gray-200 rounded-custom overflow-hidden">
+                    <button class="faq-toggle w-full p-6 text-left font-bold flex justify-between items-center hover:bg-gray-50">
+                        <span>해외에서도 시청이 가능한가요?</span>
+                        <svg class="w-5 h-5 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
+                    <div class="faq-content hidden p-6 text-gray-600 bg-gray-50 border-t border-gray-200">
+                        네, Watch Tube는 전 세계 어디서든 인터넷 연결만 되어 있다면 자유롭게 이용하실 수 있습니다.
+                    </div>
+                </div>
+                <div class="border border-gray-200 rounded-custom overflow-hidden">
+                    <button class="faq-toggle w-full p-6 text-left font-bold flex justify-between items-center hover:bg-gray-50">
+                        <span>동시 접속 기기 제한이 있나요?</span>
+                        <svg class="w-5 h-5 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
+                    <div class="faq-content hidden p-6 text-gray-600 bg-gray-50 border-t border-gray-200">
+                        프리미엄 멤버십의 경우 최대 4대의 기기에서 동시 접속이 가능합니다.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact" class="bg-gray-50 border-t border-gray-200 py-16">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-4 gap-12 mb-12">
+                <div class="col-span-1 md:col-span-1 text-center md:text-left">
+                    <a href="#" class="text-xl font-black text-primary mb-4 block">WATCHTUBE</a>
+                    <p class="text-sm text-gray-500 leading-relaxed">
+                        최고의 비디오 경험을 제공하는 글로벌 플랫폼. 당신의 이야기가 시작되는 곳입니다.
+                    </p>
+                </div>
+                <div>
+                    <h5 class="font-bold mb-6 uppercase text-xs tracking-widest text-gray-400">Quick Links</h5>
+                    <ul class="space-y-4 text-sm font-medium">
+                        <li><a href="#" class="hover:text-primary transition">About Us</a></li>
+                        <li><a href="#" class="hover:text-primary transition">Careers</a></li>
+                        <li><a href="#" class="hover:text-primary transition">Privacy Policy</a></li>
+                        <li><a href="#" class="hover:text-primary transition">Terms of Service</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h5 class="font-bold mb-6 uppercase text-xs tracking-widest text-gray-400">Support</h5>
+                    <ul class="space-y-4 text-sm font-medium text-gray-600">
+                        <li>이메일: support@watchtube.com</li>
+                        <li>전화: 02-123-4567</li>
+                        <li>주소: 서울특별시 강남구 테헤란로 123</li>
+                    </ul>
+                </div>
+                <div>
+                    <h5 class="font-bold mb-6 uppercase text-xs tracking-widest text-gray-400">Follow Us</h5>
+                    <div class="flex justify-center md:justify-start space-x-4">
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-200 flex items-center justify-center hover:bg-primary hover:text-white transition">F</a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-200 flex items-center justify-center hover:bg-primary hover:text-white transition">X</a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-200 flex items-center justify-center hover:bg-primary hover:text-white transition">I</a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-200 flex items-center justify-center hover:bg-primary hover:text-white transition">L</a>
+                    </div>
+                </div>
+            </div>
+            <div class="pt-8 border-t border-gray-200 text-center text-xs text-gray-400">
+                &copy; 2024 Watch Tube. All Rights Reserved. Seed: 1781581075540
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // FAQ Accordion
+        const faqToggles = document.querySelectorAll('.faq-toggle');
+        
+        faqToggles.forEach(toggle => {
+            toggle.addEventListener('click', () => {
+                const content = toggle.nextElementSibling;
+                const icon = toggle.querySelector('svg');
+                
+                content.classList.toggle('hidden');
+                icon.classList.toggle('rotate-180');
+                
+                // Close other FAQs
+                faqToggles.forEach(other => {
+                    if (other !== toggle) {
+                        other.nextElementSibling.classList.add('hidden');
+                        other.querySelector('svg').classList.remove('rotate-180');
+                    }
+                });
+            });
+        });
+
+        // Smooth Scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                mobileMenu.classList.add('hidden');
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
