@@ -27,12 +27,13 @@ function initAdvancedBuilder() {
     const PREVIEW_URL = 'preview.html';
     const API_MODEL = 'gemini-1.5-flash'; 
     const progressMessages = [
-        'Analyzing requirements...',
-        'Creating website structure...',
-        'Generating pages...',
-        'Designing interface...',
-        'Applying styles...',
-        'Finalizing website...'
+        '요구사항을 분석하는 중...',
+        '웹사이트 구조를 설계하는 중...',
+        '페이지를 생성하는 중...',
+        '인터페이스를 디자인하는 중...',
+        '스타일을 적용하는 중...',
+        '웹사이트를 완성하는 중...'
+
     ];
 
     const defaults = {
